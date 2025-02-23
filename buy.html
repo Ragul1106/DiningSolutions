@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Item</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="buy.css">
+</head>
+
+<body>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Juice Bar, where we serve the freshest and most delicious juices!</p>
+    </section>
+    <div class="container">
+        <h1>Purchase Item :</h1>
+        <div id="item-details">
+            <h2 id="item-name"></h2>
+            <img id="item-image" src="" alt="Item Image" style="width: 300px;">
+            <p>Price: <span id="item-price"></span></p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1"><br><br>
+            <button id="confirm-purchase" class="btn btn-primary">Confirm Purchase</button>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemName = urlParams.get('item');
+        const itemPrice = urlParams.get('price');
+        const itemImage = urlParams.get('image');
+
+        // Set item details
+        document.getElementById('item-name').textContent = itemName;
+        document.getElementById('item-price').textContent = itemPrice;
+        document.getElementById('item-image').src = itemImage;
+
+        // Confirm purchase
+        document.getElementById('confirm-purchase').addEventListener('click', () => {
+            const quantity = document.getElementById('quantity').value;
+            const total = (quantity * itemPrice).toFixed(2);
+            alert(`You have purchased ${quantity} of ${itemName} for a total of ₹ ${total}.`);
+        });
+    </script>
+</body>
+</html>

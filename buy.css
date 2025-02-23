@@ -1,0 +1,76 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: lightpink;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;/
+}
+
+#about {
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: lightpink;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#item-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  overflow: hidden;
+}
+
+#item-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px; 
+}
+
+input[type="number"] {
+  width: 80px;
+  padding: 5px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: lightcoral;
+  border-color:cyan;
+  width: 200px; 
+  text-align: center;
+  margin: 0 auto; 
+  display: block;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 90%; 
+      padding: 15px;
+  }
+
+  #item-image {
+      width: 250px; 
+  }
+
+  input[type="number"] {
+      width: 60px;
+  }
+}
